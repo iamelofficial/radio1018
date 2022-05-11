@@ -1,0 +1,223 @@
+// main: style.less
+
+/* Размер шрифта */
+.title {
+    line-height: normal;
+    &.min {
+        font-size: 2rem;
+    }
+    &.middle {
+        font-size: 2.4rem;
+    }
+    &.max {
+        font-size: 4rem;
+    }
+    &.supermax {
+        font-size: 4.8rem;
+    }
+}
+
+
+.subtitle {
+    &.min {
+        font-size: 2rem;
+    }
+    &.middle {
+        font-size: 2.4rem;
+    }
+    &.max {
+        font-size: 4rem;
+    }
+    &.supermax {
+        font-size: 4.8rem;
+    }
+}
+
+.text {
+    line-height: 1.5;
+    .min {
+        font-size: 1.4rem;
+    }
+    .middle {
+        font-size: 1.5rem;
+    }
+    .max {
+        font-size: 1.8rem;
+    }
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/**/
+
+/*
+=== Вспомогательные классы ===
+*/
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.hide {
+    display: none!important;
+}
+
+.click {
+    cursor: pointer;
+}
+
+.tdn {
+    text-decoration: none;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+/* END Вспомогательные классы */
+
+/*
+=== MARGIN ===
+*/
+
+.m0 {
+    margin: 0 !important;
+}
+
+// margin-bottom \\
+.mb0 {
+    margin-bottom: 0;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.mb50 {
+    margin-bottom: 50px !important;
+}
+
+
+// margin-top \\
+.mt0 {
+    margin-top: 0 !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+
+// margin-top \\
+.mr10 {
+    margin-right: 10px;
+}
+
+/*
+=== PADDING ===
+*/
+
+.p10 {
+    padding: 10px;
+}
+
+// padding-top \\
+.pt0 {
+    padding-top: 0 !important;
+}
+
+// padding-right \\
+.pl0 {
+    padding-left: 0 !important;
+}
+
+.pr0 {
+    padding-right: 0 !important;
+}
+
+.pr50 {
+    padding-right: 50px !important;
+}
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
+/*
+=== Выравнивание текста ===
+*/
+.text-center, .has-text-align-center {
+    text-align: center;
+}
+
+.text-right, .has-text-align-right {
+    text-align: right;
+}
+
+.text-left, .has-text-align-left {
+    text-align: left;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+    /*rtl:ignore*/
+    float: left;
+}
+
+.alignright {
+
+    /*rtl:ignore*/
+    float: right;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto;
+}
+
+//-----------------
+.social {
+    display: flex;
+    align-items: center;
+
+    &__link {
+        transition: var(--tran-02);
+    }
+}
+
+.social__link+.social__link {
+    margin-left: 12px;
+}
+
+.click {
+    cursor: pointer;
+}
+
+/* Alignments
+--------------------------------------------- */
+
+.jcsb {
+    justify-content: space-between;
+}

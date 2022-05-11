@@ -1,0 +1,413 @@
+// main: ../style.less
+
+.player {
+    display: block;
+    width: 100%;
+    background: rgba(var(--blue-color));
+    box-shadow: 0 .5rem .5rem 0 rgba(var(--black-color), .25);
+
+    &.scroll {
+        position: fixed;
+        top: 0;
+        z-index: 100;
+
+        .player__logo {
+            transform: scale(.5) translateY(-2rem);
+        }
+
+        .player__main {
+            z-index: 2;
+            transform: translateX(-80px);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        height: 8rem;
+        max-height: 8rem;
+        max-width: var(--block-width);
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    &__logo-wrapper {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        padding-top: 2rem;
+        margin-right: 5rem;
+        transition: all .3s ease;
+    }
+
+    &__logo {
+        display: block;
+        width: 15rem;
+        margin-bottom: -6rem;
+        transition: var(--tran-03) ease;
+        transform-origin: 0 0;
+        border-radius: 1rem;
+        box-shadow: 0 .5rem .5rem 0 rgba(var(--black-color), .25);
+
+        .logo-color {
+            &__white {
+                fill: rgba(var(--white-color));
+            }
+
+            &__blue {
+                fill: rgba(var(--blue-color));
+            }
+
+            &__red {
+                fill: rgba(var(--red-color));
+            }
+        }
+    }
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        margin-left: 3.5rem;
+    }
+
+    &__onair-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 7rem;
+        height: 7rem;
+        color: rgba(var(--darkwhite-color));
+        .ttu;
+        line-height: 1.15;
+        font-size: 1rem;
+        border: .1rem solid rgba(var(--darkwhite-color));
+        border-radius: 1rem;
+        transition: var(--tran-02);
+
+        i {
+            font-size: 3rem;
+        }
+
+        &:hover {
+            color: rgba(var(--blue-color));
+            background: rgba(var(--darkwhite-color));
+        }
+    }
+
+    &__img-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        overflow: hidden;
+        margin-left: 35px;
+        //padding: 10px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            object-fit: fill;
+        }
+    }
+}
+
+
+
+.player__main {
+    //display: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    transition: var(--tran-05);
+
+    audio {
+        display: none;
+    }
+
+    &_control {
+        display: flex;
+        align-items: center;
+    }
+
+    &_btn {
+        &_play-stop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            color: rgba(var(--blue-color));
+            font-size: 2.5rem;
+            background: rgba(var(--darkwhite-color));
+            border: .1rem solid rgba(var(--darkwhite-color));
+            border-radius: 50%;
+            transition: var(--tran-05);
+            .click;
+
+            &.icon-play::before {
+                position: absolute;
+                width: 2.5rem;
+                height: 2.5rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-41%, 3%);
+                transition: var(--tran-02);
+            }
+
+            &.icon-stop::before {
+                position: absolute;
+                width: 2.5rem;
+                height: 2.5rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-49%, 3%);
+                transition: var(--tran-02);
+            }
+
+            /*&:hover {
+                color: rgba(var(--player-text-color));
+                background: rgba(var(--player-primary-color));
+            }*/
+        }
+
+        &_mute {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: 5rem;
+            height: 5rem;
+            color: rgba(var(--darkwhite-color));
+            font-size: 2.5rem;
+            background: none;
+            //border: .1rem solid rgba(var(--player-primary-color));
+            border-radius: 50%;
+            transition: var(--tran-05);
+            .click;
+
+            &.icon-volume_level4::before {
+                position: absolute;
+                width: 2.5rem;
+                height: 2.5rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 5%);
+                transition: var(--tran-03);
+            }
+
+            &.icon-volume_mute::before {
+                position: absolute;
+                width: 2.5rem;
+                height: 2.5rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, 5%);
+                transition: var(--tran-03);
+            }
+
+            /*&:hover {
+                color: rgba(var(--player-text-color));
+                background: rgba(var(--player-primary-color));
+            }*/
+        }
+    }
+
+    &__volume-controls {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    &_volume {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-left: 1.5rem;
+
+        &_bar {
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: .4rem;
+            border-radius: .6rem;
+            background: rgba(var(--darkwhite-color));
+            overflow: hidden;
+
+            .fill {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba(var(--red-color));
+            }
+        }
+
+        &_slider {
+            position: relative;
+            -webkit-appearance: none;
+            //margin-left: 1.5rem;
+            width: 15rem;
+            height: .4rem;
+
+            //border: .1rem solid rgba(var(--red-color));
+            border-radius: .6rem;
+            background: transparent;
+            //background: -webkit-gradient(linear, 0% 0%, 100% 0%, color-stop(1, rgba(var(--red-color))), color-stop(1, rgba(var(--darkwhite-color))));
+            outline: none;
+            z-index: 2;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                background: rgba(var(--darkwhite-color));
+                .click;
+                box-shadow: 0 0 0 0 rgba(var(--darkwhite-color), .1);
+                transition: var(--tran-02) ease-in-out;
+
+                &:hover {
+                    box-shadow: 0 0 0 .5rem rgba(var(--darkwhite-color), .1);
+                }
+
+                &:active {
+                    box-shadow: 0 0 0 1rem rgba(var(--darkwhite-color), .1);
+                }
+            }
+        }
+    }
+
+    &_onair {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 2rem;
+        padding: 0;
+        width: auto;
+        height: auto;
+        overflow: hidden;
+        pointer-events: none;
+
+        .mp-song__info {
+            display: grid;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            position: relative;
+            margin-left: 0;
+            width: 100%;
+            max-width: none;
+            font-size: 1.6rem;
+            line-height: normal;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .mp-live-title,
+        .mp-song__info {
+            color: rgba(var(--darkwhite-color));
+        }
+
+        .mp-live-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.6rem;
+            .bold;
+            .ttu;
+            transition: var(--tran-05);
+        }
+
+        .mp-song__info {
+            transition: var(--tran-05);
+            &_group {
+                //display: flex;
+                display: none;
+            }
+
+            &_artist {
+                display: flex;
+            }
+            &_sep {
+                margin-left: .5rem;
+            }
+            &_track-name {
+                display: flex;
+                margin-left: .5rem;
+            }
+        }
+    }
+}
+
+input.radioplayer__volume-bar {
+    transition: var(--tran-05);
+}
+
+.player__cover {
+    width: 7rem;
+    height: 7rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    //background-color: #c6c6c6;
+    flex: 0 0 auto;
+    position: relative;
+    transition: .4s;
+    margin-right: 2rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 1rem;
+    box-shadow: 2.01px -2.01px 20px rgba(var(--player-primary-color), 0.37), 3.01333px 3.01333px 3.01333px rgba(var(--player-primary-color), 0.59);
+}
+
+.radio__onair {
+    display: flex;
+    align-items: center;
+}
+
+.player__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player__title {
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.player__title-desc {
+    color: rgba(var(--sidebar-link-color));
+    font-size: 1.7rem;
+    margin-bottom: .5rem;
+}
+
+.player__title-host {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgba(var(--black-color));
+    transition: var(--tran-03);
+
+    &:hover {
+        color: rgba(var(--active-color));
+    }
+}
+
+
+
+
+
+
