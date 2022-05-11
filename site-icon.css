@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'radioshtani-icon';
-  src:  url('../fonts/site-icon/site-icon.eot?dovbuc');
-  src:  url('../fonts/site-icon/site-icon.eot?dovbuc#iefix') format('embedded-opentype'),
-    url('../fonts/site-icon/site-icon.ttf?dovbuc') format('truetype'),
-    url('../fonts/site-icon/site-icon.woff?dovbuc') format('woff'),
-    url('../fonts/site-icon/site-icon.svg?dovbuc#radioshtani-icon') format('svg');
+  src:  url('fonts/site-icon/site-icon.eot?dovbuc');
+  src:  url('fonts/site-icon/site-icon.eot?dovbuc#iefix') format('embedded-opentype'),
+    url('fonts/site-icon/site-icon.ttf?dovbuc') format('truetype'),
+    url('fonts/site-icon/site-icon.woff?dovbuc') format('woff'),
+    url('fonts/site-icon/site-icon.svg?dovbuc#radioshtani-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   line-height: 0;
